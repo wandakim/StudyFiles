@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- tag name => aside -->
+    <div class="buttons">
+    <button class="by100px">scroll by 100px</button>
+    <button class="scrlto100px">scroll to 100px</button>
+    <button class="scrltoboxx">scroll to special box</button>
+    </div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box boxx"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
+    <style>
+        body {
+            background-color: black;
+            /* overflow: hidden; => window를 벗어나면 안보이게. 스크롤이 안됨. */
+        }
+        .box {
+            width: 160px;
+            height: 160px;
+            background-color: green;
+            display: block;
+            margin-bottom: 5px;
+            border-radius: 5%;
+        }
+        .boxx {
+            background-color: aqua;
+        }
+        .buttons {
+            margin:10px;
+            position: fixed;
+            right: 30px;
+        }
+        button {
+            width: 100px;
+            height: 50px;
+
+        }
+    </style>
+
+    <script>
+        //
+        const aqua = document.querySelector('.boxx');
+        aqua.addEventListener('click', (e) => {
+            console.log(aqua.getBoundingClientRect());
+            console.log(`page: ${e.pageX}, ${e.pageY}`);
+            console.log(`client:${e.clientX}, ${e.clientY}`);
+        });
+
+        const byhpx = document.querySelector('.by100px');
+        const tohpx = document.querySelector('.scrlto100px');
+        const tospcl = document.querySelector('.scrltoboxx')
+
+        byhpx.addEventListener('click', () => {
+            window.scrollBy({ top: 100, left: 0, behavior: "smooth" }); //*
+        })
+        tohpx.addEventListener('click', () => {
+            window.scroll(0, 100);  //scrollTo
+        })
+        tospcl.addEventListener('click', () => {
+            aqua.scrollIntoView();
+        })
+    </script>
+</body>
+</html>

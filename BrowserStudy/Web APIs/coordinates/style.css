@@ -1,0 +1,33 @@
+
+body {
+    background-color: black;
+    margin:0;
+}
+
+.line {
+    background-color: white;
+    position: absolute;
+}
+
+.horisontal {
+    width: 100%;
+    height: 2px;
+    position: absolute;
+}
+
+.vertical {
+    width: 2px;
+    height: 100%;
+    position: absolute;
+}
+
+.target {
+    position: absolute;
+}
+
+.tag {
+    position: absolute;
+    font-size: 60px;
+    color:blanchedalmond;
+    margin:20px;
+}

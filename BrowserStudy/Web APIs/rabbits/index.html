@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll</title>
+    <style>
+      body {
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+      }
+
+      .find {
+        width: auto;
+        height: 70px;
+        background-color:rgb(2, 197, 165);
+        font-size: 50px;
+        margin: 20px;
+        outline: none;
+        cursor: pointer;
+      }
+
+      img {
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="find">Find Rabbit</button>
+    <img class="cattot" src="img/carrot.png" alt="cattot">
+    <img class="cattot" src="img/carrot.png" alt="cattot">
+    <img class="cattot" src="img/carrot.png" alt="cattot">
+    <img class="cattot" src="img/carrot.png" alt="cattot">
+    <img class="cattot" src="img/carrot.png" alt="cattot">
+    <img class="cattot" src="img/carrot.png" alt="cattot">
+    <img class="cattot" src="img/carrot.png" alt="cattot">
+    <img class="cattot" src="img/carrot.png" alt="cattot">
+    <img class="cattot" src="img/carrot.png" alt="cattot">
+    <img class="cattot" src="img/carrot.png" alt="cattot">
+    <img class="cattot" src="img/carrot.png" alt="cattot">
+    <img class="cattot" src="img/carrot.png" alt="cattot">
+    <img class="cattot" src="img/carrot.png" alt="cattot">
+    <img class="cattot" src="img/carrot.png" alt="cattot">
+    <img class="cattot" src="img/carrot.png" alt="cattot">
+    <img class="cattot" src="img/carrot.png" alt="cattot">
+    <img class="cattot" src="img/carrot.png" alt="cattot">
+    <img class="cattot" src="img/carrot.png" alt="cattot">
+    <img class="cattot" src="img/carrot.png" alt="cattot">
+    <img class="cattot" src="img/carrot.png" alt="cattot">
+    <img class="cattot" src="img/carrot.png" alt="cattot">
+    <img class="cattot" src="img/carrot.png" alt="cattot">
+    <img class="cattot" src="img/carrot.png" alt="cattot">
+    <img class="cattot" src="img/carrot.png" alt="cattot">
+    <img class="cattot" src="img/carrot.png" alt="cattot">
+    <img class="cattot" src="img/carrot.png" alt="cattot">
+    <img class="cattot" src="img/carrot.png" alt="cattot">
+    <img src="img/rabbit.png" alt="rabbit" class="rabbit">
+    <img class="cattot" src="img/carrot.png" alt="cattot">
+    <img class="cattot" src="img/carrot.png" alt="cattot">
+    <script>
+      const rabbit = document.querySelector('.rabbit');
+      const find = document.querySelector('.find');
+      find.addEventListener('click', () => {
+        rabbit.scrollIntoView({behavior: "smooth", block: "center"}); //*
+      })
+    </script>
+  </body>
+</html>
