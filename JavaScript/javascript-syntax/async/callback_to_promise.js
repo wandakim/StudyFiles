@@ -39,4 +39,4 @@ userStorage
 .then(userStorage.getRoles) //간단하게 줄인 형태.
 .then(user => alert(`Hello ${user.name}, you have a ${user.role} role`))
 .catch(console.log);
-
+// async를 이용해서 더 깔끔하게 작성이 가능
