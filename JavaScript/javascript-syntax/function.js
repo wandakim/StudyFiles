@@ -142,7 +142,7 @@ const simpleMultiply = (a, b) => {
     // do something more
     return a * b;
 };
-//console.log(1)  // ! 돌아보니 이렇게 출력하는 경우는 없음. variable 할당 후에 출력하는 것이 원칙같은건가봄
+
 // IIFE: Immediately Invoked Function Expression
 (function hello() {
     console.log('IIFE');
