@@ -19,7 +19,8 @@ const user = fetchUser();
 user.then(console.log); //비동기 처리
 console.log(user);
 
-// 2. await //기다려 준다. async 안에서만 쓸 수 있다. 
+// 2. await
+// async 안에서만 쓸 수 있다. 
 
 function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
