@@ -144,8 +144,15 @@ const animals = ['dog', 'cat'];
         console.log(component); 
     }
 }    
-    
-    
+    //good
+{ 
+    const component = isCat ? 'cat' : 'dog';
+    console.log(component);
+    console.log(isCat ? 'cat' : 'dog'); // React에서 많이 씀
+} 
+console.clear()
 
-
+    /**
+     * Template Literals
+     */
 
