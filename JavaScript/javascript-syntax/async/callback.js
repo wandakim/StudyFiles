@@ -1,7 +1,7 @@
 'use strict'
 
 // JavaScript is synchronous
-// Execute the code block by order after hoisting. 
+// Execute the code block in order after hoisting. 
 // hoisting: var, function declaration 
 console.log('1');
 setTimeout(() => console.log('2'), 1000); //callback 
@@ -33,9 +33,9 @@ class UserStorage {
             }
         }, 2000);
     }
-    getRoles(user, onSuccess, onError) {
+    getRoles(id, onSuccess, onError) {
         setTimeout(() => {
-            if (user === 'ellie') {
+            if (id === 'ellie') {
                 onSuccess({ name: 'ellie', role: 'admin' });
             } else {
                 onError(new Error('no access'));
@@ -50,10 +50,10 @@ const password = prompt('enter your password');
 userStorage.loginUser(
     id, 
     password,
-    user => {
+    id => {
         userStorage.getRoles(
-            user,
-            userWithRole => {
+            id,
+            userWithRole => { //parmetor 로 전달받은 object.
                 alert(
                     `Hello ${userWithRole.name}, you have a ${userWithRole.role} role`
                 );
@@ -67,3 +67,8 @@ userStorage.loginUser(
         console.log(error);
     }
 )
+
+// problems of callback hell 
+// 비즈니스 로직을 한눈에 파악하기 어려움
+// chain이 길어질수록 디버깅이 어려움
+// => promise, async, await을 활용해 asynchronous function 을 깔끔하게 작성할 수 있음.
