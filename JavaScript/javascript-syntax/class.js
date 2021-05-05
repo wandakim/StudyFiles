@@ -32,7 +32,7 @@ console.log(wanda.name);
 wanda.speak();
 
 
-// 2. Getter and setters // 사용자의 실수를 막아준다. if user put negative number at age? 
+// 2. Getter and setters // 사용자의 실수를 막아준다. if user put negative number at age? *
 class User {
     constructor(firstName, lastName, age) {
         this.firstName = firstName;
