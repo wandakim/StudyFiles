@@ -1,6 +1,6 @@
 const fs = require('fs');
 const input = fs.readFileSync('dev/stdin').toString().split(' ').map(val => +val);
-const [a,b] = input;
+const [a,b] = input; 
 
 
 switch(true){
@@ -11,3 +11,6 @@ switch(true){
     case (a == b): console.log('==');
         break;
 }
+
+
+
