@@ -68,7 +68,7 @@ console.log(!value1);
 
 // 7. Equality
 const stringFive = '5'
-const numberFive =5;
+const numberFive = 5;
 
 // == loose equality, with type conversion
 console.log(stringFive == numberFive);

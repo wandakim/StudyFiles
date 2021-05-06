@@ -22,4 +22,6 @@ console.log('main 끝!');
  * 콜스택에서 다른 함수를 처리하고 있을 때 API에서 타임아웃 된 함수를 큐에 넣어주면 처리중인 것이 끝날 때까지 큐에서 대기한다. 
  * https://www.youtube.com/watch?v=S1bVARd2OSE 
  * API 함수가 큐에 있을 때, 실행되는 우선순위가 있다. 선입선출이지 않은 예외가 있음(ex. promis->setTimeout)
+ * Promise 보다 setTimeout이 queue에 먼저 들어왔어도 Promise가 먼저 실행된다. 그 이유는 queue는 사실 3개.
+ * (Task queue < Mirotask queue < Animation frame)로 이루어져 있다. Promise는 
  */

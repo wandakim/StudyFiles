@@ -7,7 +7,7 @@ if(90 <= S){
 }else if(80 <= S){
     console.log('B');
 }else if(70 <= S){
-    console.log('C');
+    console.log('C')
 }else if(60 <= S){
     console.log('D');
 } else {
