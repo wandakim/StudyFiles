@@ -40,17 +40,12 @@ class User {
         this.age = age;
     }
     
-    get age() {         //값을 return
+    get age() {         //Getter를 설정하는 순간 constructor안에 있는 this.age는 get() 호출, age는 setter 호출한다. 
         return this._age;
     }
 
     set age(value) {    //값을 설정하기 때문에  value를 받아온다. 
-        //if(value < 0) {
-        //    throw Error('age can not be negative')
-        //}
-        this._age = value < 0 ? 0 : value; //*  see Ternary operator
-    }
-}
+        this._age = value < 0 ? 0 : value; 
 
 const user1 = new User('Steve', 'Jib', -1); // 나이가 -1일 수 없다. 
 console.log(user1.age);

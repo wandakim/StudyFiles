@@ -12,12 +12,12 @@ console.log(result);
 console.log(array.reverse());
 } 
 //Q4  make new array without the first two elements
-//The slice() method returns a shallow copy 
+//The slice() method returns a shallow copy => 원본 배열을 조작하지 않는다. 
 //of a portion of an array into a new array object selected from start to end (end not included) 
 {const array = [1, 2, 3, 4, 5]
 const result = array.slice(2, 5);
-console.log(array);
-console.log(result);
+console.log(array);//
+console.log(result);//[3,4,5]
 }
 console.clear();
 
@@ -101,7 +101,7 @@ console.log(months);
 months.splice(4, 1, 'May');
 // replaces 1 element at index 4
 console.log(months);
-// expected output: Array ["Jan", "Feb", "March", "April", "May"]
+// expected output: Array ["Jan", "Feb", "March", "April", "May"] => 원본을 조작한다. 
 
 const splice = months.splice(0,1);
 console.log(splice); //["Jan"]
@@ -109,7 +109,7 @@ console.log(months); //["Feb", "March", "April", "May"]
 
 
 
-/** Syntax
+/** splice
 splice(start)
 splice(start, deleteCount)
 splice(start, deleteCount, item1)
@@ -117,5 +117,6 @@ splice(start, deleteCount, item1, item2, itemN)
  */
 
 //deleteCount (Optional)
-//An integer indicating the number of elements in the array to remove from start.
+//An integer indicating the number of elements in the array 
+//to remove from start.
 
