@@ -103,6 +103,12 @@ months.splice(4, 1, 'May');
 console.log(months);
 // expected output: Array ["Jan", "Feb", "March", "April", "May"]
 
+const splice = months.splice(0,1);
+console.log(splice); //["Jan"]
+console.log(months); //["Feb", "March", "April", "May"]
+
+
+
 /** Syntax
 splice(start)
 splice(start, deleteCount)
@@ -112,3 +118,4 @@ splice(start, deleteCount, item1, item2, itemN)
 
 //deleteCount (Optional)
 //An integer indicating the number of elements in the array to remove from start.
+
