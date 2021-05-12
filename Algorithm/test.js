@@ -20,17 +20,3 @@ rl.on('line', function (line) {
     process.exit();
 });
 
-
-const readline = require('readline');
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stout
-});
-
-let input = []
-rl.on('line', function (line) {
-input.push(parseInte(line));
-}).on('close', function () {
-//여기에 로직 작성
-process.exit();
-});

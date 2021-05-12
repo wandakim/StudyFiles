@@ -12,6 +12,8 @@ console.log(result);
 console.log(array.reverse());
 } 
 //Q4  make new array without the first two elements
+//The slice() method returns a shallow copy 
+//of a portion of an array into a new array object selected from start to end (end not included) 
 {const array = [1, 2, 3, 4, 5]
 const result = array.slice(2, 5);
 console.log(array);
@@ -87,3 +89,26 @@ class Student {
       .join();
     console.log(result);
   }
+
+//splice() method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place.
+
+const months = ['Jan', 'March', 'April', 'June'];
+months.splice(1, 0, 'Feb');
+// inserts at index 1
+console.log(months);
+// expected output: Array ["Jan", "Feb", "March", "April", "June"]
+
+months.splice(4, 1, 'May');
+// replaces 1 element at index 4
+console.log(months);
+// expected output: Array ["Jan", "Feb", "March", "April", "May"]
+
+/** Syntax
+splice(start)
+splice(start, deleteCount)
+splice(start, deleteCount, item1)
+splice(start, deleteCount, item1, item2, itemN)
+ */
+
+//deleteCount (Optional)
+//An integer indicating the number of elements in the array to remove from start.
