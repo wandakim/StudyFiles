@@ -46,7 +46,7 @@ class User {
 
     set age(value) {    //값을 설정하기 때문에  value를 받아온다. 
         this._age = value < 0 ? 0 : value; 
-
+    }}    
 const user1 = new User('Steve', 'Jib', -1); // 나이가 -1일 수 없다. 
 console.log(user1.age);
 console.log(user1._age);
