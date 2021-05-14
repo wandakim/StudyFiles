@@ -17,12 +17,14 @@ class Person {
     // constructor
     constructor(name, age) {
         // fields
+        console.log(this) // this는 Person
         this.name = name;
         this.age = age;
     }
 
     // methods
     speak() {
+        console.log(this) // person 
         console.log(`${this.name}: hello!`);
     }
 }
@@ -31,25 +33,29 @@ console.log(wanda.age);
 console.log(wanda.name);
 wanda.speak();
 
-
-// 2. Getter and setters // 사용자의 실수를 막아준다. if user put negative number at age? *
+console.clear();
+// 2. Getter and setters // 사용자의 실수를 막고 방어적으로 코드를 작성. if user put negative number at age? *
 class User {
     constructor(firstName, lastName, age) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
+        console.log(this) // User
     }
     
     get age() {         //Getter를 설정하는 순간 constructor안에 있는 this.age는 get() 호출, age는 setter 호출한다. 
-        return this._age;
+        console.log(this._age); // this.age로 하면 callstack 꽉 차버림. 
+        return this._age; // get을 이용해 값을 return 
+        
     }
 
     set age(value) {    //값을 설정하기 때문에  value를 받아온다. 
-        this._age = value < 0 ? 0 : value; 
+        this._age = value < 0 ? 0 : value;  // set을 이용해 값을 설정한다. 
     }}    
-const user1 = new User('Steve', 'Jib', -1); // 나이가 -1일 수 없다. 
+const user1 = new User('Steve', 'Jib', -1); // 나이가 -1이 될 수 없다. 
 console.log(user1.age);
 console.log(user1._age);
+//
 
 
 // 3. Fields (public, private)
@@ -59,8 +65,8 @@ class Experiment {
     #privateField = 0;
 }
 const experiment = new Experiment();
-console.log(experiment.publicField);
-console.log(experiment.privateField);
+console.log(experiment.publicField); //2
+console.log(experiment.privateField); //undefined
 
 // 4.Static properties and methods
 // Too soon!
