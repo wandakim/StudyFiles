@@ -86,15 +86,15 @@ const animals = ['dog', 'cat'];
 
     const arrayCopy2 = [...array, { key: 'key3'}];
     console.log(arrayCopy2);
-    obj1.key = 'newkey'; // object를 완전히 복사해오는 것이 아니라는 것에 유의. object 안에 있는 key, value는 참조된 것일 뿐이다. 
+    obj1.key = 'newkey'; // object를 완전히 복사해오는 것이 아니라는 것에 유의. object 안에 있는 key, value는 참조된 것일 뿐이다.  => obj 1,2,3다 바뀜. 
 
     obj3 = {...obj1};
-    console.log(obj3);
+    console.log(obj3); // {key: 'newkey'}
 
-    // array concetanation 
+    // array concatanation 
     const ab = ['a','b'];
     const cd = ['c','d'];
-    const abcd = [...ab, ...cd];
+    const abcd = [...ab, ...cd]; // Array C
     console.log(abcd);
 
     // object merge 
