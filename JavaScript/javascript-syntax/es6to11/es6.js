@@ -94,7 +94,7 @@ const animals = ['dog', 'cat'];
     // array concatanation 
     const ab = ['a','b'];
     const cd = ['c','d'];
-    const abcd = [...ab, ...cd]; // Array C
+    const abcd = [...ab, ...cd]; // Array Concat
     console.log(abcd);
 
     // object merge 

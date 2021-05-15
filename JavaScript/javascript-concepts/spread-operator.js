@@ -1,15 +1,15 @@
 
-// async/await
+
 
 /**
 * Tip8 push() 메서드 대신 펼침 연산자로 원본 변경을 피하라. 
 * 자바스크립트 상당수가 함수형 프로그래밍의 형식이므로 부수효과와 조작이 없는 코드를 작성할 필요가 있음. 
 * 조작이 항상 골치아픈 일을 만들어 내는 것은 아니지만 잠재적으로 문제가 되는 것은 사실이므로 가급적 조작을 피하는 것이 좋다. 
- *  => 펼침 연산자를 사용해 배열에 대한 의도치 않은 잠재적 조작 위험을 피하는 방법을 안다. 
+*  => 펼침 연산자를 사용해 배열에 대한 의도치 않은 잠재적 조작 위험을 피하는 방법을 안다. 
  */
 
-// 
-{
+
+{ 
 const cart = [
     {
     name: 'The Foundation Triology',
@@ -42,6 +42,8 @@ function addFreeGift(cart) {
     }
     return cart;
 }
+
+
 // 할인상품 갯수 파악 및 사은품 추가 처리 후 카트 안의 정보를 리턴하는 함수. 
 function summarizeCart(cart) {
     const discountable = cart.filter(item => item.discount);  
@@ -61,13 +63,13 @@ function summarizeCart(cart) {
 
 console.log(summarizeCart(cart));
 console.log(cart.length);// 4 
-} //(1)할인상품은 1개 까지만 구매할 수 있다. 2개 이상이면 error호출. (2) 3개 이상의 상품을 구매하면 사은품을 준다. 
+} //summerizeCart() 의 로직: (1)할인상품은 1개 까지만 구매할 수 있고, 2개 이상이면 error호출. (2) 3개 이상의 상품을 구매하면 사은품을 준다. 
+
+//----------------------
 
 
 
-
-
-// -> 어느날 착한 개발자가 코드 정리를 위해 변수(cartWithReward, discountable)의 위치를 바꿨더니 의도치 않은 조작이 발생한다. 
+// -> 어느날 착한 개발자가 코드 정리를 위해 변수(cartWithReward, discountable)의 위치를 바꿨더니 cart 원본 배열에 의도치 않은 조작이 발생한다. 
 {
 const cart = [
     {
@@ -160,7 +162,7 @@ console.log(summarizeCartUpdated(cart)); //{error: "Can only have one discount"}
   titles.shift('The Conscious Mind'); // unshift 해야하는데 기억 안나서 이렇게 실수함. 
 
   const moreTitles = ['Moby Dick', 'White Teeth'];
-  const evenMoreTitles = ['The Conscious Mind', ...moreTitles]; // 함수가 기억나지 않을 수 있으니 펼침 연산자로 하자. 
+  const evenMoreTitles = ['eThe Conscious Mind', ...moreTitls,]; // 함수가 기억나지 않을 수 있으니 펼침 연산자로 하자. 
 
   // Copy
   const toCopy = ['Moby Dick', 'White Teeth'];
@@ -242,7 +244,7 @@ console.log(summarizeCartUpdated(cart)); //{error: "Can only have one discount"}
         if (a.name === b.name) {
           return 0;
         }
-        return a.name > b.name ? 1 : -1;  //console.log('a'>'b'); 
+        return a.name > b.name ? 1 : -1;  //console.log('a'>'b'); false  dktm1
       };
 
 
@@ -303,7 +305,7 @@ staff.sort(sortByYears); // T D J
 // staff.sort()함수를 호출해 정렬할 때 순서가 바뀌었다. 사용자가 항상 같은 결과를 볼 수 없음. 
 
 {
-    [...staff].sort(sortByYears);
+    [...staff].sort(sortByYears); 
 
 // [
 //   {
@@ -324,17 +326,10 @@ staff.sort(sortByYears); // T D J
 
 
 
-/** sort(comparefunction()) 참고 : https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+/** * sort(comparefunction()) 참고 : https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
  * arr.sort([compareFunction])
  * compareFunction이 제공되면 배열 요소는 compare 함수의 반환 값에 따라 정렬됨.
  * compareFunction(a, b)이 0보다 작은 경우 a를 b보다 낮은 색인으로 정렬합니다. 즉, a가 먼저옵니다.
  * compareFunction(a, b)이 0을 반환하면 a와 b를 서로에 대해 변경하지 않고 모든 다른 요소에 대해 정렬합니다. 참고 : ECMAscript 표준은 이러한 동작을 보장하지 않으므로 모든 브라우저(예 : Mozilla 버전은 적어도 2003 년 이후 버전 임)가 이를 존중하지는 않습니다.
  * compareFunction(a, b)이 0보다 큰 경우, b를 a보다 낮은 인덱스로 소트합니다.
  * compareFunction(a, b)은 요소 a와 b의 특정 쌍이 두 개의 인수로 주어질 때 항상 동일한 값을 반환해야합니다. 일치하지 않는 결과가 반환되면 정렬 순서는 정의되지 않습니다.
- */
-{
-  
-
-
-
-}
