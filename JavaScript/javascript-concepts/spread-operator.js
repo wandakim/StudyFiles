@@ -152,6 +152,15 @@ console.log(summarizeCartUpdated(cart)); //{error: "Can only have one discount"}
         };
 }
 }
+{
+ //*filter()
+{
+  const array = [1,2,3,1,2,];
+  const one = array.filter((item) => item===1);
+  console.log(one); //[1,1]
+  }
+   
+}
 /**
  * + 배열에 아이템을 추가하기
  */
