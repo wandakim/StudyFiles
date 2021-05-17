@@ -1,22 +1,15 @@
-
-const readline = require('readline');
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
-
-let input = [];
-rl.on('line', function (line) {
-  input.push(parseInt(line));
-}).on('close', function () {
-  const X = input[0];
-  const Y = input[1];
-
-  if(X>0){
-    (Y>0 ? console.log(1) : console.log(4))
+input = [23,40]
+let [h,m] = input;
+if(h===0){    
+if( m < 45 ){
+    console.log(`${h+23} ${15+m}`);
 } else {
-    (Y>0 ? console.log(2) : console.log(3))
+    console.log(`${h} ${m-45}`);  
 }
-    process.exit();
-});
-
+} else {
+ if (m < 45) {
+    console.log(`${h-1} ${15+m}`);
+} else {
+    console.log(`${h} ${m-45}`);
+}
+}
