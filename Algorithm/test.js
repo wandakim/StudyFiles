@@ -1,5 +1,8 @@
-const n = '2'*1;
+input = ['2','1 2','2 3']
+const n = +(input.splice(0,1));
 
-for(i = 1; i < 10; i++){
-    console.log(`${n} * ${i} = ${n*i}`);
+for(i = 0; i < n; i++){
+    let nmbrs = input[i].split(' ').map(val=>+val);
+    let [a,b] = nmbrs;
+    console.log(a+b);
 }
