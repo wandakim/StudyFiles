@@ -1,11 +1,11 @@
 
-input = ['4','1 3','59 43','1 2','2 20000000000000']
-let string = '';
-const n = +(input.splice(0,1)); 
-for(i = 0; i < n; i++){
-    let nmbrs = input[i].split(' ').map(val=>+val);
-    let [a,b] = nmbrs;
-    string += `${a+b}
-`;
+const N = 10;
+let A = '';
+for(i=1;i<N+1;i++){
+    A += `${i}
+`
 }
-console.log(string);
+const B = A.split(''); // 여기에서 10은 1과 0으로 나뉘어짐. 
+B.pop(); 
+console.log(B);
+console.log(B.reverse().join(''));
