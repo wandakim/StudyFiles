@@ -2,11 +2,9 @@
 
 - fs모듈 사용해서 풀고 있음.
 
--백준 단계별 풀이
+#백준 단계별 풀이
 
+- 입출력 처리는 fs모듈을 사용해서 풀이하고 있습니다.
 - fs모듈 사용시 오류나는 문제: 14681,
-  => readline 사용해서 풀이.
-  https://tesseractjh.tistory.com/39 백준에서의 입력 방법 참고.
-
-- 참고사이트
-  https://degurii.tistory.com/108
+  => readline 사용해서 풀이. fs모듈로 푸는게 간결해서 이후 계속 사용하고 있음
+- snippet에 등록하여 alfred로 간단하게 입력 코드를 작성하고 있음
