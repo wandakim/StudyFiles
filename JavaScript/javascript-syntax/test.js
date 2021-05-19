@@ -18,11 +18,13 @@ function getTotalStats() {
     
       const total = {};
     
-      const stats = Object.keys(game1);
+      const stats = Object.keys(game1); //*
       for (let i = 0; i < stats.length; i++) {
         const stat = stats[i];
         if (stat !== 'player') {
-          total.stat = game1.stat + game2.stat;
+          total[stat] = game1[stat] + game2[stat];
+          //좌항에서는 destructuring 오른쪽에서는 key 로 기존 object의 value에 접근 
+          //total.stat = game1.stat + game2.stat; 왜 이건 안될까? 
         }
       }
       console.log(total);
