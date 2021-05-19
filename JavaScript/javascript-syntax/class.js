@@ -131,5 +131,5 @@ console.log(rectangle instanceof Rectangle); //true
 console.log(triangle instanceof Object); //true * Every Objects of JavaScript extends Object.
 console.log(triangle.toString());  // we can use commonly existing methods in Object class. 
 
-// Javascripy mdn references  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference#built-ins
+// Javascript mdn references  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference#built-ins
 // categorys. 
