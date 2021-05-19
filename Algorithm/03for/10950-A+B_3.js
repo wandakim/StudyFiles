@@ -46,7 +46,6 @@ for(i = 0; i < n; i++){
 
 input = ['2','1 2','2 3']
 const n = +(input.splice(0,1));
-
 for(i = 0; i < n; i++){
     let nmbrs = input[i].split(' ').map(val=>+val);
     let [a,b] = nmbrs;
@@ -60,6 +59,6 @@ for(i = 0; i < n; i++){
     let nmbrs = input[i];
     console.log(nmbrs[0]*1+nmbrs[2]*1);
 }
-// 문자열을 index로 접근해서 풀 수도 있음. 이게 가장 간단하기는 하나 가독성이 많이 떨어지는 느낌이다. 
+// 문자열을 index로 접근해서 풀 수도 있음. 가독성이 많이 떨어지는 느낌이다. 
 
 
