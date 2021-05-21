@@ -51,3 +51,8 @@ console.log(input[1].split(' ').map(v=>+v).filter(v=>v<x).join(' '));
 
 // 맞았습니다!!
 // 꼭 for 사용해서 풀 필요가 없었다. frame 안에서만 찾으려했구나. 
+
+
+if(n<d){
+    while for 
+}
