@@ -22,13 +22,11 @@ console.log(user.phone); // 12341234
 // map
 
 let userMap = new Map();
-console.log(userMap);
 userMap.set("name", "Sumgbin");
 userMap.set("email", "asdf1234@gmail.com");
 userMap.set("phone", "12341234");
 console.log(userMap.get("phone")); //12341234
 
-// object와 map 은 key 와 value를 가지고 있다. 
 
 // 값에 접근하기
 
@@ -50,7 +48,8 @@ userMap.set(key, "1234");
 }
 
 // object 대신 map을 사용해야 하는 이유? 
-// 스터디 멤버들의 이름과 지역이 배열에 있다. 새로운 object와 map을 만들어 지역별로 key를 만들어 넣어주겠다. (아래 참고)
+
+// 스터디 멤버들의 이름과 지역이 배열에 있다. 새로운 object와 map을 만들어 지역별로 key를 만들어 넣어보자.
 {
     let jsStudyArr = [
         {name:"A", city:"Incheon"},
@@ -124,76 +123,224 @@ userMap.set(key, "1234");
 
 //.97 Object에 데이터를 추가,삭제,초기화(전부 삭제)하기 위해 3가지 메서드를 만듬. 
 
-let keyValue = {} 
+    let keyValue = {} 
 
-function addFilters(keyValObj, key, value) {
-    keyValObj[key] = value; // key, value를 설정
-    }
+    function addFilters(keyValObj, key, value) {
+        keyValObj[key] = value; // key, value를 설정
+        }
+        
+    function deleteFilters(keyValObj, key) {
+        delete keyValObj[key]; // delete연산자를 사용해서 key,value 쌍을 삭제 
+        }
+        
+    function clearFilters(keyValObj) {
+        keyValObj = {};
+        return keyValObj; // 모든 값을 제거하기 위해 변수를 재할당. filters = new Object();와 같다. 
+        }
     
-function deleteFilters(keyValObj, key) {
-    delete keyValObj[key]; // delete연산자를 사용해서 key,value 쌍을 삭제 
-    }
-    
-function clearFilters(keyValObj) {
-    keyValObj = {};
-    return keyValObj; // 모든 값을 제거하기 위해 변수를 재할당. filters = new Object();와 같다. 
+
+    {
+        const keyValMap = new Map();
+        function addFilters(map, key, value) {
+        map.set(key, value);
+        }
+        
+        function deleteFilters(map, key) {
+        map.delete(key);
+        }
+        
+        function clearFilters(map) {
+        map.clear();
+        }
     }
 
-// - object 에 key,value를 추가,삭제,초기화(모두삭제)를 위해 서로 다른 세가지 다른 방법을 사용.
-// - 키-값 쌍을 자주 추가하고 삭제하는 경우에 불편함. 
-// - Map을 사용하면 더 생산성 높게 코드 작성이 가능하다. 
-{
-    const keyValMap = new Map();
-    function addFilters(map, key, value) {
-      map.set(key, value);
-    }
-    
-    function deleteFilters(map, key) {
-      map.delete(key);
-    }
-    
-    function clearFilters(map) {
-      map.clear();
-    }
+
+    // * 맵을 생성하고 데이터를 추가하고 가져오기 (.99)
+
+    let newMap = new Map(); 
+
+    newMap.set('key', 'value'); // add data
+    newMap.get('key'); // return data
+    console.log(newMap.get('key')) // value
+
+    // ! 위의 object에 데이터를 넣고 빼는 것에 비해 간편하다.
+
+    //* 데이터를 여러개 추가하기 (chaining)
+
+    let mapKeyVals = new Map();
+        .set('key1','val1' )
+        .set('key2','val2')
+        .set('key3','val3');
+
+    mapKeyVals.get('key2'); //returns "val2"
+
+
+    // * 데이터를 배열로 변환해 사용하기
+    let myMap = new Map(
+        [
+            ['key1', 'val1'], 
+            ['key2', 'val2'], 
+            ['key3', 'val3'],
+        ]
+    )
+
+    myMap.get('key1') // returns "value1"
+
+    // * 데이터 삭제하기
+    myMap.delete('val1');
+    myMap.get('val1'); // returns undefined
+
+    //* 모든 데이터 제거하기 
+    mymap.clear();
+    mymap.get('val2'); // returns undefined
 }
 
+// - object 에 key,value를 추가,삭제,초기화(모두삭제)를 위해 서로 다른 세가지 다른 방법을 사용.
+// - 키-값 쌍을 자주 추가하고 삭제하는 경우에 객체보다 맵을 사용하면 편리하고 모든 동작과 의도가 매우 명료하게 보인다. 
+// - Map을 사용하면 더 생산성 높게 코드 작성이 가능하다.
 
-// * 맵을 생성하고 데이터를 추가하고 가져오기 (.99)
 
-let newMap = new Map(); // 새로운 맵 인스턴스 생성. 
-
-newMap.set('key', 'value'); // add data
-newMap.get('key'); // return data
-console.log(newMap.get('key')) // value
-
-// ! 위의 object에 데이터를 넣고 빼는 것에 비해 간편하다.
-
-//* 데이터를 여러개 추가하기 (chaining Tip25)
-
-let mapKeyVals = new Map();
+//-맵은 여러가지 자료형을 key로 받아올 수 있다. -> 값에 접근하기. 
+{
+    let mapKeyVals = new Map();
     .set('key1','val1' )
     .set('key2','val2')
     .set('key3','val3');
 
-mapKeyVals.get('key2'); //returns "val2"
+    console.log(mapKeyVals.keys();) 
+    //MapIterator {"key1", "key2", "key3"}
+// >[[Entries]]
+// >__proto__: Map Iterator
+// [[IteratorHasMore]]: true
+// [[IteratorIndex]]: 0
+// [[IteratorKind]]: "keys"
+    // MapIterator {"key1", "key2", "key3"}
+    // MapIterator 이용해서 데이터를 순회할 수 있다. *
+}
+
+// 객체는 순회하기가 번거롭다. for in, for of 등을 사용해야함
+{ 
+    const filters = { 
+        color: 'black',
+        breed: 'labrador',
+    };
+    function getAppliedFilters(filters) {
+        const keys = Object.keys(filters); // key를 배열에 담는다. 
+        const applied = [];
+        for (const key of keys) {
+            applied.push(`${key}:${filters[key]}`);
+        }
+        return `${applied.join(', ')}.`;
+    }
+      // 'color:black, breed:labrador.'
+} 
+//간단한 순회를 위해 해야할 것이 너무 많음. 
+//Map에는 MapIterator의 일부로 정렬과 순회에 필요한 기능이 내장되어 있다. 
+//Map을 이용해 훨씬 단순하면서도 원래의 데이터 구도를 유지하는 코드 작성이 가능하다. 
+{ 
+    const filters = new Map()
+    .set('color', 'black')
+    .set('breed', 'labrador');
+
+    function getAppliedFilters(filters) {
+        const applied = [];
+        for (const [key, value] of filters) {
+            applied.push(`${key}:${value}`);
+        }
+        return `${applied.join(', ')}.`;
+        }
+}
+
+{ //필터링 조건을 정렬하기. 
+    function getSortedAppliedFilters(filters) {
+        const keys = Object.keys(filters);
+        keys.sort(); // keys 배열을 먼저 정렬 해준다. 
+        const applied = [];
+        for (const key of keys) {
+        applied.push(`${key}:${filters[key]}`);
+        }
+        return `${applied.join(', ')}.`;
+    }
+    // 'breed:labrador, color:black.'
+}
+
+// {// 
+//     const filters = new Map()
+//     .set('color', 'black')
+//     .set('breed', 'labrador');
+    
+//     function checkFilters(filters) {
+//     for (const entry of filters) {
+//         console.log(entry);
+//     }
+//     }
+//   // ['color', 'black']
+//   // ['breed', 'labrador']
+
+//     filters.entries();
+//     //MapIterator(['color','black'],['breed','labrador'])
+
+// }// MapIterator는 키-값 쌍을 넘겨준다. * MapIterator에 관해서는 곧 나올 예정..
 
 
-// * 데이터를 배열로 변환해 사용하기
-let myMap = new Map(
-    [
-        ['key1', 'val1'], 
-        ['key2', 'val2'], 
-        ['key3', 'val3'],
-    ]
-)
 
-myMap.get('key1') // returns "value1"
+// 맵은 순서를 저장하지만 배열의 경우처럼 sort()를 사용할 수 없다. 
+// filters.sort() 이렇게 사용할 수가 없음. -> 펼침 연산자를 사용할 수 있다. 
+[...filters];
+// [['color', 'black'], ['breed', 'labrador']] // 키-값 쌍으로 이루어진 배열을 반환. 
+{
+    const filters = new Map()
+    .set('color', 'black')
+    .set('breed', 'labrador');
 
-// * 데이터 삭제하기
-myMap.delete('val1');
-myMap.get('val1'); // returns undefined
+    function sortByKey(a, b) {
+        return a[0] > b[0] ? 1 : -1;
+    }
+    function getSortedAppliedFilters(filters) {
+        const applied = [...filters]
+            .sort(sortByKey)
+            .map(([key, value]) => {
+            return `${key}:${value}`;
+        })
+        .join(', ');
+        return `Your filters are: ${applied}.`;
+    }
+      // 'Your filters are: breed:labrador, color:black.'
+}
+// ------------------------------------------
+//Tip15 맵 생성 시 부수 효과를 피하라. 
+//- 맵의 사본은 어떻게 생성할까? 
+{
+    const defaults = new Map()
+    .set('color', 'brown')
+    .set('breed', 'beagle')
+    .set('state', 'kansas')
+    
+    const copy = new Map([...defaults]);
+}
+//- 맵은 하나의 키를 한번만 사용할 수 있다. 
+//- 이미 생성된 키로 맵을 생성하면 마지막으로 선언됭 값을 사용.
+{   
+    const filters = new Map()
+    .set('color', 'brown')
+    .set('color', 'black');
+    filters.get('color'); // black
+// 값을 갱신한다.
+// 펼침 연산자를 사용하면 코드 한줄로 병합이 가능하다. 
+    function 병합(map1,map2) {
+        return new Map ([...map1,map2])
+    }// 이렇게 병합할 수가 있음. 
 
-//* 모든 데이터 제거하기 
-mymap.clear();
-mymap.get('val2'); // returns undefined
+}
+
+// --------------------------------------------
+// Tip 16 세트를 이용해 고윳값을 관리하라. 
+{
+    const colors = ['black','black','brown'];
+    const unique = new Set(colors); //set {'black','brown'}
+    //펼침 연산자를 사용하면 배열로 반환할 수 있다. 
+    function getUnique(attributes) {
+        return[...new Set(attributes)];
+    }
+    console.log(getUnique(colors)); // [ 'black', 'brown' ]
 }

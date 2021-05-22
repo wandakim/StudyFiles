@@ -1,7 +1,7 @@
 
+  let mapKeyVals = new Map()
+  .set('key1','val1' )
+  .set('key2','val2')
+  .set('key3','val3');
 
-let userMap = new Map();
-userMap.set("name", "Sumgbin");
-userMap.set("email", "asdf1234@gmail.com");
-userMap.set("phone", "12341234");
-console.log(userMap.get("phone")); //12341234
+  console.log(mapKeyVals.keys()) //
