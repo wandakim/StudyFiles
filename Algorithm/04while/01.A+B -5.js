@@ -27,10 +27,15 @@
 
 
 //strategy
-// input 배열에 한줄씩 저장
-// 하나씩 index로 꺼내서 할당 후 더해서 출력
-// 출력값이 0이면 return
+//배열로 두개씩 들어오면 하나씩 차례로 꺼내서 더하고 더한 값이 0이 아니면 출력한다.  
 
 const fs = require('fs');
 const input = fs.readFileSync('dev/stdin').toString().split('\n');
-
+let i = 0;
+while(a+b !== 0)
+{ 
+    let [a,b] = input.[i].split(' ').map(v=>+v);
+    console.log(a+b);
+    i++;
+}
+// 제출1, 런타임 에러. test 진행

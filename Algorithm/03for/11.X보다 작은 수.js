@@ -53,6 +53,19 @@ console.log(input[1].split(' ').map(v=>+v).filter(v=>v<x).join(' '));
 // 꼭 for 사용해서 풀 필요가 없었다. frame 안에서만 찾으려했구나. 
 
 
-if(n<d){
-    while for 
+const fs = require('fs');
+const input = fs.readFileSync('dev/stdin').toString().split('\n');
+const NL = input.splice(0,1).toString().split(' '); 
+const N = NL[0]*1;
+const L = NL[1]*1;
+
+const numbersArray = input[0].split(' ').map(val=>+val); // input.toString() 대신 input[0] 하니 정답이 나옴.. 
+
+let answerArray = []; 
+for(let i=0;i<N;i++){
+    if(numbersArray[i]<L){
+        answerArray.push(numbersArray[i])
+    }
 }
+const answer = answerArray.join(' ');
+console.log(answer);
