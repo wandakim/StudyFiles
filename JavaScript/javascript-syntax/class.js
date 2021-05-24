@@ -42,13 +42,10 @@ class User {
         this.age = age;
         console.log(this) // User
     }
-    
     get age() {         //Getter를 설정하는 순간 constructor안에 있는 this.age는 get() 호출, age는 setter 호출한다. 
-        console.log(this._age); // this.age로 하면 callstack 꽉 차버림. 
+    // this.age로 하면 callstack 꽉 차버림. 
         return this._age; // get을 이용해 값을 return 
-        
     }
-
     set age(value) {    //값을 설정하기 때문에  value를 받아온다. 
         this._age = value < 0 ? 0 : value;  // set을 이용해 값을 설정한다. 
     }}    
@@ -108,7 +105,7 @@ class Shape {
 class Rectangle extends Shape {}
 class Triangle extends Shape {
     draw() {
-        super.draw() // * 나중에  다시 
+        super.draw() //  // 부모의 함수(onver writing하지 않은 함수도 이렇게 쓸 수가 있다. )
         console.log('🔺')
     }
     getArea() {
@@ -120,7 +117,7 @@ class Triangle extends Shape {
 }
 
 const rectangle = new Rectangle(20, 20, 'blue');
-rectangle.draw(); 
+rectangle.draw(); // 상속된 함수를 사용. 
 console.log(rectangle.getArea())
 const triangle = new Triangle(20, 20, 'red');
 triangle.draw();
