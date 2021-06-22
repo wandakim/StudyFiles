@@ -28,18 +28,18 @@
 // 왜냐하면 지금까지 입력의 갯수를 받아서 반복문은 돌린 적이 있지만 그것을 가지고 입력을 끝내거나 한 적은 없기 때문에 자동으로 입력이 끝나면 fs 모듈에서 eof와 같은 처리가 일어나는 것이 아닌가 하고 추측함. 
 // 결국 그동안 입력을 받던 방식 그대로 받아서 더하면 될 것 같다는 생각이다. 입력의 갯수는 Array.length()로도 얻을 수 있으니까
 // while문으로 푸는 문제이니까 while로 index를 검사해서 n-1까지 뽑아서 나누고 더해서 출력까지 해보기로 한다. 
+{
 const fs = require('fs');
 const input = fs.readFileSync('dev/stdin').toString().split('\n');
 let n = input.length()
 let i = 0;
 while (i = n-1){
-    let [a , b] = input.i.split(' ').map(v=>+v);
+    let [a , b] = input.i.split(' ').map(v=>+v); // => 이렇게 하면 안됨. 
     console.log(a + b);
     i++;
 }
-
+}
 {
-
 const input = ['1 2', '3 4', '0 0'];
 
 let n = input.length
@@ -85,4 +85,12 @@ https://www.acmicpc.net/board/view/59328
 // 궁금한 것이 해결되었다. 백준에서 입력 받는 것 때문에 오류가 나는 경우가 까다롭다. 근데 오기가 막 생겨서 그냥 풀고있다
 // 앞으로는 내가 잘 한 것 같은데 잘 안된다면 빠르게 그냥 알아보는 것이 나을 것 같다. string.prototype.trim()을 하면 바깥쪽으로부터의 공백을 없에준다(문자열 가운데 공백은 그대로임).
 
-// 결국, trim()을 해 주면 위의 while과 for 둘다 풀이가 정답이다. 다음부터는, 그냥 trim 을 해 주는 것도 좋을 것 같다. 
+// 결국, trim()을 해 주면 위의 while과 for 둘다 풀이가 정답이다. 다음부터는, 그냥 처음에 입력을 받을 때 trim 을 해 주는 것도 좋을 것 같다. 
+const fs = require('fs');
+const input = fs.readFileSync('dev/stdin').toString().trim().split(''); // 이렇게 기본 셋으로 지정해서 입력 처리 하도록 함. alfred snippet에 변경 해둠. 자동으로 텍스트를 받아온 후 좌우 여백을 제거하고 입력을 받아오도록 처리 완료. 
+
+
+
+
+
+
